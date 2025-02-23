@@ -1,2 +1,50 @@
-PROJECT-Parking Assistant System
-The Parking Assistant System helps drivers park safely by detecting obstacles using an ultrasonic sensor (HC-SR04). The system measures the distance between the car and an obstacle and uses LED indicators to provide real-time feedback:
+# TASK 5
+# PROJECT: Parking Assistant System
+
+# OVERVIEW
+
+The Parking Assistant System is designed to help drivers park their vehicles safely by using an ultrasonic sensor to detect the distance between the car and an obstacle. Based on the measured distance, LED indicators light up in different colors to alert the driver:
+
+Green LED: Safe distance (no need to stop).
+
+Yellow LED: Caution (medium distance, slow down).
+
+Red LED: Danger (very close, stop immediately).
+
+The system continuously measures the distance and updates the LED status in real time, providing a visual parking assistant.
+
+# COMPONENTS REQUIRED
+
+Microcontroller: VSDsquadron Mini (CH32V003F4U6)
+
+Ultrasonic Sensor: HC-SR04
+
+LEDs: Green, Yellow, Red
+
+Resistors: 220Ω (for LEDs)
+
+Jumper Wires
+
+Breadboard
+
+# HARDWARE CONNECTIONS
+
+Ultrasonic Sensor (HC-SR04) Connections
+
+VCC → Connect to 3.3V on VSDsquadron Mini
+
+GND → Connect to GND on VSDsquadron Mini
+
+TRIG → Connect to PA1 on VSDsquadron Mini
+
+ECHO → Connect to PA2 on VSDsquadron Mini
+
+# LED Connections
+
+Green LED: Positive (Anode) → PD1 
+
+Yellow LED: Positive (Anode) → PD2 
+
+Red LED: Positive (Anode) → PD3 
+
+All LED negatives (Cathode) → GND
