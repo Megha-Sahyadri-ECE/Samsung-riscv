@@ -1,1 +1,2 @@
-
+PROJECT-Parking Assistant System
+The Parking Assistant System helps drivers park safely by detecting obstacles using an ultrasonic sensor (HC-SR04). The system measures the distance between the car and an obstacle and uses LED indicators to provide real-time feedback:
