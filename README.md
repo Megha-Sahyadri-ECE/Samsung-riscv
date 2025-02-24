@@ -10,13 +10,35 @@ Email ID: megharp.ec22@sahyadri.edu.in or ramachandrahpoojary@gmail.com
 -
 LinkedIn: [MEGHA R P](https://www.linkedin.com/in/megha-r-p-7a714426a)
 -
-## Tasks
-- **TASK1:** Development of C Based LAB  
-- **TASK2:** Simulation with Spike  
-- **TASK3:** Identification of RISC-V Instructions  
-- **TASK4:** Functional Simulation of RISC-V Core  
-- **TASK5:** Project Overview - Circuit Diagram  
-- **TASK6:** Project Application  
+<details>
+<summary>TASK1:Development of C Based LAB</summary>
+
+
+## leafpad installation
+<img
+src=""/>
+
+
+## c based lab output
+<img 
+src=""/>
+
+## c based lab program
+  <img
+src=""/>
+
+## riscv based lab output(01)
+<img
+src=""/>
+
+## riscv based lab output(0fast)
+<img
+src=""/>
+
+## riscv based lab output
+<img
+src=""/>
+
 
 # TASK 5
 # PROJECT: Ultrasonic Obstacle Detection with Buzzer Alarm
