@@ -25,7 +25,7 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program
 
 ## c based lab program
   <img
-src=""/>
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
 
 ## riscv based lab output(01)
 <img
