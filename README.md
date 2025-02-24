@@ -29,15 +29,12 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program
 
 ## riscv based lab output(01)
 <img
-src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/calculation_main.JPG"/>
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/sum1ton..o%20file.JPG"/>
 
 ## riscv based lab output(0fast)
 <img
-src=""/>
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/calculation_main.JPG"/>
 
-## riscv based lab output
-<img
-src=""/>
 
 
 # TASK 5
