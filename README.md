@@ -29,7 +29,7 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program
 
 ## riscv based lab output(01)
 <img
-src=""/>
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/calculation_main.JPG"/>
 
 ## riscv based lab output(0fast)
 <img
