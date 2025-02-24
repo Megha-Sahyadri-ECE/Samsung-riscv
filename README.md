@@ -21,7 +21,7 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/leafpad
 
 ## c based lab output
 <img 
-src=""/>
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum%20compiler.JPG"/>
 
 ## c based lab program
   <img
