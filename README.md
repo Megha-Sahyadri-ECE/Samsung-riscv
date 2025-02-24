@@ -16,7 +16,7 @@ LinkedIn: [MEGHA R P](https://www.linkedin.com/in/megha-r-p-7a714426a)
 
 ## leafpad installation
 <img
-src=""/>
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/leafpad%20installation.JPG"/>
 
 
 ## c based lab output
