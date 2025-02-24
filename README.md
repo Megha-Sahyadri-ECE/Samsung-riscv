@@ -19,19 +19,11 @@ LinkedIn: [MEGHA R P](https://www.linkedin.com/in/megha-r-p-7a714426a)
 - **TASK6:** Project Application  
 
 # TASK 5
-# PROJECT: Parking Assistant System
+# PROJECT: Ultrasonic Obstacle Detection with Buzzer Alarm
 
 # OVERVIEW
 
-The Parking Assistant System is designed to help drivers park their vehicles safely by using an ultrasonic sensor to detect the distance between the car and an obstacle. Based on the measured distance, LED indicators light up in different colors to alert the driver:
-
-Green LED: Safe distance (no need to stop).
-
-Yellow LED: Caution (medium distance, slow down).
-
-Red LED: Danger (very close, stop immediately).
-
-The system continuously measures the distance and updates the LED status in real time, providing a visual parking assistant.
+This project is an Ultrasonic-Based Object Detection and Alert System using the CH32V003 microcontroller and the HC-SR04 ultrasonic sensor. It measures the distance of nearby objects using ultrasonic waves and triggers an alert mechanism based on the detected distance. If an object is within a certain range, the system activates a buzzer to provide an audible warning. The HC-SR04 sensor is powered by 5V, while its Echo signal is safely converted to 3.3V using a voltage divider to ensure compatibility with the CH32V003 MCU. This system is useful for proximity sensing, obstacle detection, and safety applications.
 
 # COMPONENTS REQUIRED
 
@@ -39,200 +31,113 @@ Microcontroller: VSDsquadron Mini (CH32V003F4U6)
 
 Ultrasonic Sensor: HC-SR04
 
-LEDs: Green, Yellow, Red
-
-Resistors: 220Ω (for LEDs)
-
-Jumper Wires
+Buzzer
 
 Breadboard
 
+Jumper wires
+
+
 # HARDWARE CONNECTIONS
 
-Ultrasonic Sensor (HC-SR04) Connections
-
-VCC → Connect to 3.3V on VSDsquadron Mini
-
-GND → Connect to GND on VSDsquadron Mini
-
-TRIG → Connect to PA1 on VSDsquadron Mini
-
-ECHO → Connect to PA2 on VSDsquadron Mini
-
-# LED Connections
-
-Green LED: Positive (Anode) → PD1 
-
-Yellow LED: Positive (Anode) → PD2 
-
-Red LED: Positive (Anode) → PD3 
-
-All LED negatives (Cathode) → GND
+HC-SR04 VCC to 5V: The HC-SR04 ultrasonic sensor needs 5V power to work, so connect the VCC pin of the sensor to a 5V supply.
+HC-SR04 GND to GND: Connect the GND pin of the sensor to the ground of the system.
+HC-SR04 Trig to PC0: The Trig pin of the sensor is connected to PC0 on the microcontroller to send the trigger signal. The 3.3V logic from the microcontroller is safe for this pin.
+HC-SR04 Echo to PC1 (via voltage divider): The Echo pin from the sensor outputs 5V, but the microcontroller uses 3.3V logic. Use a voltage divider (1kΩ and 2kΩ resistors) to reduce the 5V signal to 3.3V, then connect it to PC1.
+Buzzer + to PC3: The positive pin of the buzzer is connected to PC3 on the microcontroller to control when it turns on.
+Buzzer - to GND: The negative pin of the buzzer is connected to ground.
 # CODE
-#include "ch32v00x.h"  // Include the CH32V00x specific header file
-#include <stdint.h>     // Include standard integer types
-#include <stdio.h>      // Include stdio.h for snprintf
+#include <ch32v00x.h>  // CH32V003 MCU headers
+#include <system_ch32v00x.h>
 
-// Define pins for Ultrasonic Sensor and LEDs
-#define trigPin 1  // PA1
-#define echoPin 2  // PA2
-#define greenLedPin 1  // PD1
-#define yellowLedPin 2  // PD2
-#define redLedPin 3  // PD3
+#define TRIG_PIN   GPIO_Pin_0  // PC0 - Ultrasonic Trigger
+#define ECHO_PIN   GPIO_Pin_1  // PC1 - Ultrasonic Echo
+#define LED_PIN    GPIO_Pin_2  // PC2 - LED
+#define BUZZER_PIN GPIO_Pin_3  // PC3 - Buzzer
 
-long duration;
-int distance;
-
-// Function prototypes
-void delay_ms(int ms);
-void gpio_set(int pin, int level);
-int gpio_get(int pin);
-void uart_init(void);
-void uart_send(char data);
-void uart_print(const char* str);
-long pulseIn(int pin);
-
-void setup() {
-  // Initialize UART for debugging
-  uart_init();
-  uart_print("Initializing Parking Assistant...\n");
-
-  // Set GPIO pins for ultrasonic sensor and LEDs
-  gpio_set(trigPin, 0);  // Set trigger pin low initially
-  gpio_set(echoPin, 1);  // Set echo pin as input (assumed)
-  gpio_set(greenLedPin, 0);  // Set LED pins low initially
-  gpio_set(yellowLedPin, 0);
-  gpio_set(redLedPin, 0);
-
-  uart_print("Setup complete.\n");
-}
-
-void loop() {
-  // Trigger the ultrasonic sensor
-  gpio_set(trigPin, 0);
-  delay_ms(2);
-  gpio_set(trigPin, 1);
-  delay_ms(10);
-  gpio_set(trigPin, 0);
-  
-  // Measure pulse duration
-  duration = pulseIn(echoPin);
-  
-  // Calculate distance in cm
-  distance = duration * 0.034 / 2;
-  
-  // Control LEDs based on distance
-  if (distance > 50) {
-    gpio_set(greenLedPin, 1);  // Green LED for safe distance
-    gpio_set(yellowLedPin, 0);
-    gpio_set(redLedPin, 0);
-  } 
-  else if (distance > 20 && distance <= 50) {
-    gpio_set(greenLedPin, 0);
-    gpio_set(yellowLedPin, 1);  // Yellow LED for caution
-    gpio_set(redLedPin, 0);
-  } 
-  else {
-    gpio_set(greenLedPin, 0);
-    gpio_set(yellowLedPin, 0);
-    gpio_set(redLedPin, 1);  // Red LED for danger
-  }
-
-  // Print distance to UART for debugging
-  char buf[50];
-  snprintf(buf, sizeof(buf), "Distance: %d cm\n", distance);
-  uart_print(buf);
-
-  delay_ms(100);
-}
-
-void delay_ms(int ms) {
-  // Implement a simple delay function (blocking)
-  for (int i = 0; i < ms; i++) {
-    for (int j = 0; j < 1000; j++) {
-      __asm("nop");  // No operation, just a delay
+void delay_us(uint32_t us) {
+    for (volatile uint32_t i = 0; i < us * 8; i++) {
+        __NOP();
     }
-  }
 }
 
-void gpio_set(int pin, int level) {
-  // Set the GPIO pin to HIGH or LOW (level 1 or 0)
-  if (level == 0) {
-    if (pin == trigPin || pin == echoPin) {
-      GPIO_ResetBits(GPIOA, 1 << pin);  // Reset pin to LOW (for PA1 and PA2)
-    } else {
-      GPIO_ResetBits(GPIOD, 1 << pin);  // Reset pin to LOW (for PD1, PD2, PD3)
+void delay_ms(uint32_t ms) {
+    for (uint32_t i = 0; i < ms; i++) {
+        delay_us(1000);
     }
-  } else {
-    if (pin == trigPin || pin == echoPin) {
-      GPIO_SetBits(GPIOA, 1 << pin);    // Set pin to HIGH (for PA1 and PA2)
-    } else {
-      GPIO_SetBits(GPIOD, 1 << pin);    // Set pin to HIGH (for PD1, PD2, PD3)
+}
+
+void Ultrasonic_Init() {
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC, ENABLE);  // Enable GPIOC clock
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);   // Enable TIM2 clock
+
+    GPIO_InitTypeDef GPIO_InitStruct;
+
+    // Initialize Trigger Pin (Output)
+    GPIO_InitStruct.GPIO_Pin = TRIG_PIN;
+    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_10MHz;
+    GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+    // Initialize Echo Pin (Input)
+    GPIO_InitStruct.GPIO_Pin = ECHO_PIN;
+    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+    GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+    // Initialize LED and Buzzer (Outputs)
+    GPIO_InitStruct.GPIO_Pin = LED_PIN | BUZZER_PIN;
+    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+    // Configure Timer 2 (TIM2)
+    TIM2->PSC = 48 - 1;   // Set prescaler (1us per count at 48MHz)
+    TIM2->ATRLR = 0xFFFF; // Set auto-reload (max value)
+    TIM2->CTLR1 |= TIM_CEN;  // Enable TIM2 (Bit 0: CEN)
+}
+
+uint32_t getDistance() {
+    // Send Trigger Pulse
+    GPIO_ResetBits(GPIOC, TRIG_PIN);
+    delay_us(2);
+    GPIO_SetBits(GPIOC, TRIG_PIN);
+    delay_us(10);
+    GPIO_ResetBits(GPIOC, TRIG_PIN);
+
+    // Wait for Echo High
+    while (GPIO_ReadInputDataBit(GPIOC, ECHO_PIN) == RESET);
+    TIM2->CNT = 0;  // Reset timer
+    while (GPIO_ReadInputDataBit(GPIOC, ECHO_PIN) == SET);
+    uint32_t time_elapsed = TIM2->CNT;  // Read elapsed time
+
+    // Convert Time to Distance (Speed of Sound: 343 m/s or 0.0343 cm/us)
+    return (time_elapsed * 0.0343) / 2; // Distance in cm
+}
+
+void Object_Detection() {
+    while (1) {
+        uint32_t distance = getDistance();
+
+        if (distance < 20) {  // If object is detected within 20 cm
+            GPIO_SetBits(GPIOC, LED_PIN);  // Turn on LED
+            if (distance < 10) {
+                GPIO_SetBits(GPIOC, BUZZER_PIN);  // Turn on Buzzer if very close
+            } else {
+                GPIO_ResetBits(GPIOC, BUZZER_PIN);
+            }
+        } else {
+            GPIO_ResetBits(GPIOC, LED_PIN | BUZZER_PIN);  // Turn off both
+        }
+
+        delay_ms(500);  // Delay for stability
     }
-  }
 }
 
-int gpio_get(int pin) {
-  // Get the level of the GPIO pin (HIGH or LOW)
-  if (pin == echoPin) {
-    return GPIO_ReadInputDataBit(GPIOA, 1 << pin);  // Return the pin state for PA2 (Echo)
-  } else {
-    return GPIO_ReadInputDataBit(GPIOD, 1 << pin);  // Return the pin state for PD1, PD2, PD3 (LEDs)
-  }
-}
+int main(void) {
+    SystemInit();       // Initialize system clock
+    Ultrasonic_Init();  // Initialize ultrasonic sensor, LED, and buzzer
+    Object_Detection(); // Start object detection loop
 
-long pulseIn(int pin) {
-  // Measure the duration of a pulse on the specified pin
-  long duration = 0;
-
-  // Wait for the pin to go HIGH
-  while (gpio_get(pin) == 0);
-  
-  // Measure the pulse duration while the pin is HIGH
-  while (gpio_get(pin) == 1) {
-    duration++;
-    delay_ms(1);  // Short delay to simulate timing
-  }
-
-  return duration;
-}
-
-void uart_init(void) {
-  // Initialize UART for debugging (assumed to be UART1 on CH32V00x)
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);  // Enable USART1 clock
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);   // Enable GPIOA clock (for UART TX/RX)
-
-  // Set PA9 (TX) and PA10 (RX) for UART1
-  GPIO_InitTypeDef GPIO_InitStructure;
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9 | GPIO_Pin_10;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_Init(GPIOA, &GPIO_InitStructure);
-
-  // Initialize UART1
-  USART_InitTypeDef USART_InitStructure;
-  USART_InitStructure.USART_BaudRate = 9600;    // Baud rate 9600
-  USART_InitStructure.USART_WordLength = USART_WordLength_8b;  // 8 data bits
-  USART_InitStructure.USART_StopBits = USART_StopBits_1;        // 1 stop bit
-  USART_InitStructure.USART_Parity = USART_Parity_No;            // No parity
-  USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
-  USART_InitStructure.USART_Mode = USART_Mode_Tx | USART_Mode_Rx;
-  USART_Init(USART1, &USART_InitStructure);
-
-  USART_Cmd(USART1, ENABLE);  // Enable UART1
-}
-
-void uart_send(char data) {
-  // Send a single character over UART
-  while (USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);  // Wait for TX buffer to be empty
-  USART_SendData(USART1, data);  // Send the character
-}
-
-void uart_print(const char* str) {
-  // Send a string over UART
-  while (*str) {
-    uart_send(*str++);  // Send each character
-  }
+    while (1);
 }
 
 
