@@ -322,7 +322,7 @@ This project is an Ultrasonic-Based Object Detection and Alert System using the 
 
 1.Pinout Diagram of Ultrasonic Obstacle Detection with Buzzer Alarm
 <img 
-src=""/>
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task5/_CIRCUIT-DIAGRAM.PNG"/>
 <img
 
 2.Blinking Led Test code simulation.
