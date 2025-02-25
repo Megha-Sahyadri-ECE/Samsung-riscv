@@ -362,38 +362,6 @@ https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task5/LED_blink_te
 
 2.Ultrasonic Obstacle Detection with Buzzer Alarm system code
 ```
-
-
-
-# TASK 5
-# PROJECT: Ultrasonic Obstacle Detection with Buzzer Alarm
-
-# OVERVIEW
-
-This project is an Ultrasonic-Based Object Detection and Alert System using the CH32V003 microcontroller and the HC-SR04 ultrasonic sensor. It measures the distance of nearby objects using ultrasonic waves and triggers an alert mechanism based on the detected distance. If an object is within a certain range, the system activates a buzzer to provide an audible warning. The HC-SR04 sensor is powered by 5V, while its Echo signal is safely converted to 3.3V using a voltage divider to ensure compatibility with the CH32V003 MCU. This system is useful for proximity sensing, obstacle detection, and safety applications.
-
-# COMPONENTS REQUIRED
-
-Microcontroller: VSDsquadron Mini (CH32V003F4U6)
-
-Ultrasonic Sensor: HC-SR04
-
-Buzzer
-
-Breadboard
-
-Jumper wires
-
-
-# HARDWARE CONNECTIONS
-
-HC-SR04 VCC to 5V: The HC-SR04 ultrasonic sensor needs 5V power to work, so connect the VCC pin of the sensor to a 5V supply.
-HC-SR04 GND to GND: Connect the GND pin of the sensor to the ground of the system.
-HC-SR04 Trig to PC0: The Trig pin of the sensor is connected to PC0 on the microcontroller to send the trigger signal. The 3.3V logic from the microcontroller is safe for this pin.
-HC-SR04 Echo to PC1 (via voltage divider): The Echo pin from the sensor outputs 5V, but the microcontroller uses 3.3V logic. Use a voltage divider (1kΩ and 2kΩ resistors) to reduce the 5V signal to 3.3V, then connect it to PC1.
-Buzzer + to PC3: The positive pin of the buzzer is connected to PC3 on the microcontroller to control when it turns on.
-Buzzer - to GND: The negative pin of the buzzer is connected to ground.
-# CODE
 #include <ch32v00x.h>  // CH32V003 MCU headers
 #include <system_ch32v00x.h>
 
