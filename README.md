@@ -289,12 +289,12 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program
 <img
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
 
-7. ADDI R12,R4,5
+7. ADDI 
 <img
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
-8. BEQ R0,R0,15
+8. BEQ 
 <img
-src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/_beq_.png"/>
 
 
 
