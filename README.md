@@ -255,6 +255,14 @@ Install iverlog using commands:
 4. To see the simulation waveform in GTKWave, enter the following command:
 
         gtkwave iiitb_rv32i.vcd
+5.apt_get gtkwave installation
+
+<img
+src="<img
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/add_.PNG"/>
+
+
+
 
 Analysing the Output Waveform of the instructions.
 
@@ -270,15 +278,18 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/add_.PN
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/_sub_.png"/>
 
 
-3. SLT 
+3. SLT
+   
 <img
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/slt.png"/>
 
-4. ADDI 
+4. ADDI
+   
 <img
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/addi.png"/>
 
-5. BEQ 
+5. BEQ
+   
 <img
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/_beq_.png"/>
 
