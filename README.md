@@ -327,8 +327,8 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task5/_CIRCUI
 
 
 2.Blinking Led Test code simulation.
-<img
-src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task5/LED_blink_test.mp4"/>
+
+https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task5/LED_blink_test.mp4
 
 
 
