@@ -260,33 +260,82 @@ Install iverlog using commands:
 <img
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/apt_get%20gtkwave%20install.PNG"/>
 
-## iiitb_rv32_tb  code
+6. iiitb_rv32_tb  code
+   
+ ```
+#include <vsdsquadron.h>  // Include VSDSquadron Mini Board hardware headers
 
-<summary> module iiitb_rv32i_tb;
+#define TRIG_PIN  GPIO_Pin_0  // GPIO0 for Trigger
+#define ECHO_PIN  GPIO_Pin_1  // GPIO1 for Echo
+#define LED_PIN   GPIO_Pin_2  // GPIO2 for LED
+#define BUZZER_PIN GPIO_Pin_3 // GPIO3 for Buzzer
 
-reg clk,RN;
-wire [31:0]WB_OUT,NPC;
+void delay_us(uint32_t us) {
+    for (volatile uint32_t i = 0; i < us * 8; i++) {
+        __NOP();  // Small delay for microseconds
+    }
+}
 
-iiitb_rv32i rv32(clk,RN,NPC,WB_OUT);
+void delay_ms(uint32_t ms) {
+    for (volatile uint32_t i = 0; i < ms * 8000; i++) {
+        __NOP();
+    }
+}
 
+uint32_t measure_distance() {
+    uint32_t time_count = 0;
 
-always #3 clk=!clk;
+    // Send 10µs pulse to TRIG pin
+    GPIO_SetBits(GPIO0, TRIG_PIN);
+    delay_us(10);
+    GPIO_ResetBits(GPIO0, TRIG_PIN);
 
-initial begin 
-RN  = 1'b1;
-clk = 1'b1;
+    // Wait for Echo Pin to go HIGH
+    while (!GPIO_ReadInputDataBit(GPIO1, ECHO_PIN));
 
-$dumpfile ("iiitb_rv32i.vcd"); //by default vcd
-$dumpvars (0, iiitb_rv32i_tb);
-  
-  #5 RN = 1'b0;
-  
-  #300 $finish;
+    // Start counting while Echo is HIGH
+    while (GPIO_ReadInputDataBit(GPIO1, ECHO_PIN)) {
+        time_count++;
+        delay_us(1);
+    }
 
-end
-endmodule</summary>
+    // Convert time to distance (Speed of sound = 343m/s)
+    return (time_count * 0.0343) / 2;  // Distance in cm
+}
 
+int main(void) {
+    SystemInit();  // Initialize system clock
 
+    // Enable GPIO Clock
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIO, ENABLE);
+
+    // Configure TRIG, LED, and BUZZER as output
+    GPIO_InitTypeDef GPIO_InitStruct;
+    GPIO_InitStruct.GPIO_Pin = TRIG_PIN | LED_PIN | BUZZER_PIN;
+    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_Out_PP;
+    GPIO_InitStruct.GPIO_Speed = GPIO_Speed_10MHz;
+    GPIO_Init(GPIO0, &GPIO_InitStruct);
+
+    // Configure ECHO as input
+    GPIO_InitStruct.GPIO_Pin = ECHO_PIN;
+    GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN_FLOATING;
+    GPIO_Init(GPIO1, &GPIO_InitStruct);
+
+    while (1) {
+        uint32_t distance = measure_distance();
+
+        // If distance is less than 10 cm, turn LED and Buzzer ON
+        if (distance < 10) {
+            GPIO_SetBits(GPIO2, LED_PIN);
+            GPIO_SetBits(GPIO3, BUZZER_PIN);
+        } else {
+            GPIO_ResetBits(GPIO2, LED_PIN);
+            GPIO_ResetBits(GPIO3, BUZZER_PIN);
+        }
+
+        delay_ms(500);  // Delay to avoid continuous measurements
+    }
+}
 
 
 Analysing the Output Waveform of the instructions.
