@@ -357,6 +357,7 @@ https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task5/LED_blink_te
 <details>
 <summary>TASK6:Project Application</summary>
 </summary>
+  
 1.Ultrasonic Obstacle Detection with Buzzer Alarm Application video.
 https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task6/working_project_video.mp4
 
