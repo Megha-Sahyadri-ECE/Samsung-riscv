@@ -63,7 +63,7 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/debbugg
 
 ## objdump of O1
 <img
-src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/debugging%20_O1_.PNG"/>
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/spike-d%20_evenodd_debug.PNG"/>
 
 ## objdump of Ofast
 <img
