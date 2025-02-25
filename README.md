@@ -259,7 +259,7 @@ Install iverlog using commands:
 
 <img
 src="<img
-src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/add_.PNG"/>
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/apt_get%20gtkwave%20install.PNG"/>
 
 
 
