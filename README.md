@@ -314,6 +314,19 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/addi.pn
    
 <img
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/_beq_.png"/>
+</details>
+
+<details>
+<summary>TASK5:Project overview-circuit diagram</summary>
+</summary>
+1.Pinout Diagram of 
+<img 
+src=""/>
+<img
+
+2.Blinking Led Test code simulation.
+
+https://github.com/Sudheeksha-Sahyadri-ECE/samsung-riscv/raw/refs/heads/main/task%205/blinking_led_test.mp4
 
 
 
