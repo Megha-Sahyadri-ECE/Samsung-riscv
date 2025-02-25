@@ -317,9 +317,8 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/_beq_.p
 
 <details>
 <summary>TASK5:Project overview-circuit diagram</summary>
-</summary>
-  
-This project is an Ultrasonic-Based Object Detection and Alert System using the CH32V003 microcontroller and the HC-SR04 ultrasonic sensor. It measures the distance of nearby objects using ultrasonic waves and triggers an alert mechanism based on the detected distance. If an object is within a certain range, the system activates a buzzer to provide an audible warning. The HC-SR04 sensor is powered by 5V, while its Echo signal is safely converted to 3.3V using a voltage divider to ensure compatibility with the CH32V003 MCU. This system is useful for proximity sensing, obstacle detection, and safety applications.
+
+  This project is an Ultrasonic-Based Object Detection and Alert System using the CH32V003 microcontroller and the HC-SR04 ultrasonic sensor. It measures the distance of nearby objects using ultrasonic waves and triggers an alert mechanism based on the detected distance. If an object is within a certain range, the system activates a buzzer to provide an audible warning. The HC-SR04 sensor is powered by 5V, while its Echo signal is safely converted to 3.3V using a voltage divider to ensure compatibility with the CH32V003 MCU. This system is useful for proximity sensing, obstacle detection, and safety applications.
 
 # COMPONENTS REQUIRED
 
