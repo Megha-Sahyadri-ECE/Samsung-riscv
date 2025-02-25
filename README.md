@@ -35,6 +35,14 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/sum1ton
 <img
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/calculation_main.JPG"/>
 
+## riscv based lab output
+<img
+src="## riscv based lab output
+<img
+src="https://github.com/Sudheeksha-Sahyadri-ECE/samsung-riscv/blob/main/task1/riscv%20based%20lab%20output.png?raw=true" alt="Task Icon"/>
+
+
+
 
 
 # TASK 5
