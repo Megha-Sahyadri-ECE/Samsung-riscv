@@ -45,9 +45,9 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/main%20
 <details>
 <summary>TASK2:Simulation with Spike</summary>
   
-## program to calculate product of numbers 1 to 5
+## program to find whether the  given number is even or odd
 <img
-src="" />
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/c%20program_evenodd.PNG" />
 ## debugging of O1
 <img 
 src=""/>
