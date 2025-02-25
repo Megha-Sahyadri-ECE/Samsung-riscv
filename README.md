@@ -256,59 +256,45 @@ Install iverlog using commands:
 
         gtkwave iiitb_rv32i.vcd
 
-32-bits instruction used in the code:
+Analysing the Output Waveform of the instructions.
 
-![Instructions](<>)
+1. ADD
 
-Analysing the Output Waveform of various instructions that we have covered in this task.
+<img
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
 
-1. ADD R6,R1,R2
-
-![ADD R6,R1,R2](<>)
-
-  32 bit instruction:32'h02208300
-
+  
 2. SUB R7,R1,R2
 
-![SUB R7,R1,R2](<>)
+<img
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
 
-32 bit instruction:32'h02209380
 
-3. And R8,R1,R3
 
-![And R8,R1,R3](<>)
+3. And 
 
-32 bit instruction:32'h0230a400
+<img
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
 
-4. OR R9,R2,R5
+4. OR
+<img
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
 
-![OR R9,R2,R5](<>)
+5. XOR
 
-32 bit instruction:32'h02513480
+<img
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
 
-5. XOR R10,R1,R4
-
-![XOR R10,R1,R4](<>)
-
-32 bit instruction:32'h0240c500
-
-6. SLT R11,R2,R4
-
-![SLT R11,R2,R4](<>)
-
-32 bit instruction:32'h02415580
+6. SLT 
+<img
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
 
 7. ADDI R12,R4,5
-
-![ADDI R12,R4,5](<>)
-
-32 bit instruction:32'h00520600
-
+<img
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
 8. BEQ R0,R0,15
-
-![BEQ R0,R0,15](<>)
-
-32 bit instruction:32'h00f00002
+<img
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
 
 
 
