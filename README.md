@@ -74,7 +74,7 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/objdump
 <summary>TASK3:Identification of RISCV instructions</summary>
   <img
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task3/ofast_objdump.PNG"/>
-<summary>RISC-V Assembly Instructions Breakdown
+<summary>RISC-V Assembly Instructions Breakdown</summary>
   
 ## **1. `lui a0, 0x2b`**  
 **Opcode (U-Type):** `0110111`  
