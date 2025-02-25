@@ -260,9 +260,8 @@ Install iverlog using commands:
 <img
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/apt_get%20gtkwave%20install.PNG"/>
 
-6. iiitb_rv32_tb  code
-   
- ```
+6.iiitb_rv32i_code
+ 
 module iiitb_rv32i_tb;
 
 reg clk,RN;
