@@ -54,7 +54,7 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/debuggi
 
 ## debugging of Ofast
   <img
-src=""/>
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/debbugging%20process_Ofast.PNG"/>
 
 ## objdump of O1
 <img
