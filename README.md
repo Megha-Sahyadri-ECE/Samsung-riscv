@@ -261,7 +261,7 @@ Analysing the Output Waveform of the instructions.
 1. ADD
 
 <img
-src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/add_.PNG"/>
 
   
 2. SUB 
