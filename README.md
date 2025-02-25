@@ -231,6 +231,86 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task3/ofast_o
 |---------|-----------|------------|-----------|--------|---------|--------|---------|
 | 1 | 011101 | 00000 | 01111 | 000 | 1100 | 1 | 1100011 |
 
+</details>
+<details>
+<summary>TASK4:Functional Simulation of RISC-V Core</summary>
+</summary>
+<br>
+Steps to perform functional simulation of RISCV
+
+1. Download Files:
+Download the code from the reference github repo.
+
+2. Set Up Simulation Environment:
+Install iverlog using commands:
+
+        sudo apt install iverilog
+        sudo apt install gtkwave
+
+3. To run and simulate the verilog code, enter the following command:
+
+        iverilog -o iiitb_rv32i iiitb_rv32i.v iiitb_rv32i_tb.v
+        ./iiitb_rv32i
+
+4. To see the simulation waveform in GTKWave, enter the following command:
+
+        gtkwave iiitb_rv32i.vcd
+
+32-bits instruction used in the code:
+
+![Instructions](<>)
+
+Analysing the Output Waveform of various instructions that we have covered in this task.
+
+1. ADD R6,R1,R2
+
+![ADD R6,R1,R2](<>)
+
+  32 bit instruction:32'h02208300
+
+2. SUB R7,R1,R2
+
+![SUB R7,R1,R2](<>)
+
+32 bit instruction:32'h02209380
+
+3. And R8,R1,R3
+
+![And R8,R1,R3](<>)
+
+32 bit instruction:32'h0230a400
+
+4. OR R9,R2,R5
+
+![OR R9,R2,R5](<>)
+
+32 bit instruction:32'h02513480
+
+5. XOR R10,R1,R4
+
+![XOR R10,R1,R4](<>)
+
+32 bit instruction:32'h0240c500
+
+6. SLT R11,R2,R4
+
+![SLT R11,R2,R4](<>)
+
+32 bit instruction:32'h02415580
+
+7. ADDI R12,R4,5
+
+![ADDI R12,R4,5](<>)
+
+32 bit instruction:32'h00520600
+
+8. BEQ R0,R0,15
+
+![BEQ R0,R0,15](<>)
+
+32 bit instruction:32'h00f00002
+
+
 
 
 # TASK 5
