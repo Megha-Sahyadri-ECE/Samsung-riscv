@@ -314,6 +314,7 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/addi.pn
    
 <img
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/_beq_.png"/>
+</details>
 
 <details>
 <summary>TASK5:Project overview-circuit diagram</summary>
@@ -355,7 +356,7 @@ https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task5/LED_blink_te
 
 <details>
 <summary>TASK6:Project Application</summary>
-</summary>
+
   
 1.Ultrasonic Obstacle Detection with Buzzer Alarm Application video.
 https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task6/working_project_video.mp4
