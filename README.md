@@ -48,6 +48,13 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/main%20
 ## program to find whether the  given number is even or odd
 <img
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/c%20program_evenodd.PNG" />
+
+## output of even odd program
+<img
+src="## program to find whether the  given number is even or odd
+<img
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/c%20program_evenodd.PNG" />
+
 ## debugging of O1
 <img 
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/debugging%20_O1.PNG"/>
