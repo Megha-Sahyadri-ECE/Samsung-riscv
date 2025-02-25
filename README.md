@@ -41,6 +41,29 @@ src="## riscv based lab output
 <img
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/main%20file.JPG"/>
 
+</details>
+<details>
+<summary>TASK2:Simulation with Spike</summary>
+  
+## program to calculate product of numbers 1 to 5
+<img
+src="" />
+## debugging of O1
+<img 
+src=""/>
+
+## debugging of Ofast
+  <img
+src=""/>
+
+## objdump of O1
+<img
+src=""/>
+
+## objdump of Ofast
+<img
+src=""/>
+
 
 
 
