@@ -68,6 +68,13 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/debuggi
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/objdump_Ofast.PNG"/>
 
 
+</details>
+
+<details>
+<summary>TASK3:Identification of RISCV instructions</summary>
+  <img
+src=""/>
+<summary># RISC-V Assembly Instructions Breakdown
 
 
 
