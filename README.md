@@ -272,7 +272,7 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/_sub_.p
 
 3. SLT 
 <img
-src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/slt.png"/>
 
 4. ADDI 
 <img
