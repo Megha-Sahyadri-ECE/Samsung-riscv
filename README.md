@@ -51,9 +51,7 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/c%20pro
 
 ## output of even odd program
 <img
-src="## program to find whether the  given number is even or odd
-<img
-src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/c%20program_evenodd.PNG" />
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/leafpad%20evenodd%20compile%20process.PNG" />
 
 ## debugging of O1
 <img 
