@@ -37,8 +37,6 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/calcula
 
 ## riscv based lab output
 <img
-src="## riscv based lab output
-<img
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/main%20file.JPG"/>
 
 </details>
@@ -55,7 +53,7 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/leafpad
 
 ## debugging of O1
 <img 
-src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/debugging%20_O1.PNG"/>
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/spike-d%20_evenodd_debug.PNG"/>
 
 ## debugging of Ofast
   <img
