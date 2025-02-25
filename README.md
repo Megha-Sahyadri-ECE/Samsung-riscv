@@ -50,7 +50,7 @@ src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/main%20
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/c%20program_evenodd.PNG" />
 ## debugging of O1
 <img 
-src=""/>
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task2/debugging%20_O1.PNG"/>
 
 ## debugging of Ofast
   <img
