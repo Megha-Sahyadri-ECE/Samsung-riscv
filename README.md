@@ -264,35 +264,21 @@ Analysing the Output Waveform of the instructions.
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
 
   
-2. SUB R7,R1,R2
+2. SUB 
 
+<img
+src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/_sub_.png"/>
+
+
+3. SLT 
 <img
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
 
-
-
-3. And 
-
+4. ADDI 
 <img
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
 
-4. OR
-<img
-src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
-
-5. XOR
-
-<img
-src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
-
-6. SLT 
-<img
-src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
-
-7. ADDI 
-<img
-src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task1/program%20sum.JPG"/>
-8. BEQ 
+5. BEQ 
 <img
 src="https://github.com/Megha-Sahyadri-ECE/Samsung-riscv/blob/main/Task4/_beq_.png"/>
 
